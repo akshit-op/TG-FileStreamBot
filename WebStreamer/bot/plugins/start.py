@@ -8,10 +8,3 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 @StreamBot.on_message(filters.command(['start', 'help']))
 async def start(_, m: Message):
     await m.reply(f'Hi {m.from_user.mention(style="md")}, Send me a file to and reply it with /link to get an instant stream link.',
-                  reply_markup=InlineKeyboardMarkup(
-                      [[
-                            InlineKeyboardButton(
-                                  f'{emoji.STAR} Source {emoji.STAR}',
-                                  url='https://telegra.ph/file/f581496878d3b3d990282.jpg')
-                        ]]
-                  ))
